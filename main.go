@@ -1,12 +1,16 @@
 package main
 
-import (
-	"github.com/rivo/tview"
-)
+const configFileName string = ".wolioconfig"
+
+// Entry -
+type Entry struct {
+	Name    string `json:"name"`
+	HWAddr  string `json:"hwAddr"`
+	UDPPort uint   `json:"port"`
+}
 
 func main() {
-	box := tview.NewBox().SetBorder(true).SetTitle("Hello, world!")
-	if err := tview.NewApplication().SetRoot(box, true).Run(); err != nil {
-		panic(err)
-	}
+	app := NewApp()
+	app.DrawMenu()
+	app.Run()
 }

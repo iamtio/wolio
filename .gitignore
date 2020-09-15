@@ -1,1 +1,5 @@
-go.mod
+go.sum
+.vscode/
+.wolioconfig
+wolio
+wolio.exe
